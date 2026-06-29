@@ -254,7 +254,7 @@ function createTabEl(tab: TabSession): HTMLElement {
   const el = document.createElement("div");
   el.className = "sidebar-tab" + (tab.ptyId === activeTabId ? " active" : "");
   el.draggable = true;
-  el.innerHTML = `<span class="tab-icon">></span><span class="tab-label">${tab.name}</span><button class="tab-close">x</button>`;
+  el.innerHTML = `<span class="tab-icon">></span><span class="tab-label">${escapeHtml(tab.name)}</span><button class="tab-close">x</button>`;
 
   el.addEventListener("click", (e) => {
     if ((e.target as HTMLElement).classList.contains("tab-close")) return;
@@ -284,7 +284,7 @@ function createFolderEl(folder: Folder, tabs: TabSession[]): HTMLElement {
   header.innerHTML = `
     <span class="folder-arrow">v</span>
     <span class="folder-icon">[=]</span>
-    <span class="folder-name">${folder.name}</span>
+    <span class="folder-name">${escapeHtml(folder.name)}</span>
     <span class="folder-count">${tabs.length}</span>
     <span class="folder-actions">
       <button class="folder-add" title="New tab in folder">+</button>
