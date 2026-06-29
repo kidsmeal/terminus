@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TERMINUS</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <div id="titlebar">
+      <div id="titlebar-left">
+        <button id="sidebar-toggle" title="Toggle sidebar">///</button>
+        <span id="title-icon">></span>
+        <span id="title-text">TERMINUS</span>
+      </div>
+      <div id="titlebar-right">
+        <div id="xp-bar">
+          <div id="xp-fill"></div>
+          <span id="xp-text">LVL 1 · 0 XP</span>
+        </div>
+        <span id="cmd-count">0 cmds</span>
+        <div id="window-controls">
+          <button class="win-btn" id="btn-minimize">_</button>
+          <button class="win-btn" id="btn-maximize">□</button>
+          <button class="win-btn win-close" id="btn-close">x</button>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="sidebar">
+        <div id="sidebar-actions">
+          <button id="btn-new-tab" title="New terminal (Ctrl+T)">+ TERM</button>
+          <button id="btn-new-folder" title="New folder">+ FOLDER</button>
+        </div>
+        <div id="sidebar-tree"></div>
+        <div id="project-panel" class="hidden">
+          <div id="project-panel-header">
+            <span class="project-panel-title">PROJECT</span>
+            <button id="project-refresh" title="Refresh">R</button>
+          </div>
+          <div id="project-content"></div>
+        </div>
+      </div>
+      <div id="terminal-area">
+        <div id="terminal-container"></div>
+      </div>
+    </div>
+    <div id="status-bar">
+      <span id="status-shell">PWS</span>
+      <span id="status-cwd">~</span>
+      <span id="status-streak"></span>
+      <div id="achievements-toast" class="hidden"></div>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+  </body>
+</html>
